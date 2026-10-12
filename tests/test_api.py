@@ -43,5 +43,7 @@ def test_version_header_et_compteur(client):
 
 def test_reset(client):
     client.get("/")
-    assert client.post("/reset").json() == {"visites": 0}
+    resp = client.post("/reset")
+    assert resp.status_code == 200
+    assert resp.json() == {"visites": 0}
     assert client.get("/").json() == {"visites": 1}
