@@ -39,3 +39,9 @@ def test_version_header_et_compteur(client):
     r2 = client.get("/")
     assert r2.headers["X-Visites-Version"] == "0.1.0"
     assert r2.json()["visites"] == r1.json()["visites"] + 1
+
+
+def test_reset(client):
+    client.get("/")
+    assert client.post("/reset").json() == {"visites": 0}
+    assert client.get("/").json() == {"visites": 1}
