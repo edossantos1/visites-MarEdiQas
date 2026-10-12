@@ -27,3 +27,8 @@ def test_metrics(client):
     resp = client.get("/metrics")
     assert resp.status_code == 200
     assert "http_requests_total" in resp.text
+
+
+def test_root_version_header(client):
+    resp = client.get("/")
+    assert resp.headers["X-Visites-Version"] == "0.1.0"
