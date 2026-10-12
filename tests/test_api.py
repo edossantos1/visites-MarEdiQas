@@ -32,3 +32,10 @@ def test_metrics(client):
 def test_root_version_header(client):
     resp = client.get("/")
     assert resp.headers["X-Visites-Version"] == "0.1.0"
+
+
+def test_version_header_et_compteur(client):
+    r1 = client.get("/")
+    r2 = client.get("/")
+    assert r2.headers["X-Visites-Version"] == "0.1.0"
+    assert r2.json()["visites"] == r1.json()["visites"] + 1
