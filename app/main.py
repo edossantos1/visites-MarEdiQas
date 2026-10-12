@@ -25,7 +25,8 @@ async def metrics_middleware(request: Request, call_next):
             LATENCY.labels(path).observe(time.perf_counter() - start)
             REQUESTS.labels(request.method, path, status).inc()
 @app.get("/")
-def root():
+def root(response: Response):
+    response.headers["X-Visites-Version"] = "0.1.0"
     n = r.incr("visites")
     return {"visites": n}
 @app.get("/health")
