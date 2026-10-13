@@ -7,7 +7,7 @@ name = "visites"
 version = "0.1.0"
 requires-python = ">=3.12"
 # fastapi volontairement en retard d'une version (Dependabot, TP02)
-dependencies = ["fastapi==0.120.0", "uvicorn[standard]>=0.38", "redis>=6.4", "prometheus-client>=0.23"]
+dependencies = ["fastapi==0.143.0", "uvicorn[standard]>=0.38", "redis>=6.4", "prometheus-client>=0.23"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.4", "pytest-cov>=7", "httpx>=0.28", "fakeredis>=2.32", "ruff>=0.14", "pre-commit>=4.6"]
