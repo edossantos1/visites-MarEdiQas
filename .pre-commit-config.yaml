@@ -12,3 +12,7 @@ repos:
       - id: ruff        # analyse le code Python (erreurs, imports inutiles…)
         args: [--fix]
       - id: ruff-format # formate le code Python
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks
