@@ -1,0 +1,14 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace     # supprime les espaces en fin de ligne
+      - id: end-of-file-fixer       # ajoute le saut de ligne final manquant
+      - id: check-yaml              # vérifie la syntaxe des fichiers YAML
+      - id: check-added-large-files # bloque les gros fichiers
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.0
+    hooks:
+      - id: ruff        # analyse le code Python (erreurs, imports inutiles…)
+        args: [--fix]
+      - id: ruff-format # formate le code Python
