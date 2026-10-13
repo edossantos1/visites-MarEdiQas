@@ -40,3 +40,4 @@ Nous signons les commits car la forge vérifie seulement qui possède les droits
 - Dismiss stale approvals : sans cette option, on pourrait faire approuver une PR inoffensive puis pousser du code malveillant avant la fusion.
 - Code owner absent : la PR reste bloquée. Il faut au moins deux propriétaires par chemin sensible, ou un administrateur autorisé à contourner la règle de façon tracée.
 - PR Dependabot : un humain doit l'approuver (et un code owner si elle touche .github/). C'est une bonne chose : une mise à jour peut être compromise (attaque de la chaîne d'approvisionnement), un robot ne doit pas faire entrer seul une dépendance dans main.
+- Dependabot actif (Insights > Dependency graph > Dependabot) sur pip, actions et docker ; les écosystèmes actions et docker n'ont encore rien à surveiller (pas de workflow ni de Dockerfile), ils serviront à partir du TP03.
